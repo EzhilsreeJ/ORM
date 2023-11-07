@@ -11,4 +11,4 @@ class playersAdmin(admin.ModelAdmin):
     list_display=('player_name','players_age','native_place','salary','no_of_winnings')
 
 
-# Create your models here.
+

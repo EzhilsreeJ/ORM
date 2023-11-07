@@ -24,34 +24,32 @@ Execute Django admin and create 10 Football players
 
 ## PROGRAM
 ```py
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
-import os
-import sys
+models.py
+
+from django.db import models
+from django.contrib import admin
+class players(models.Model):
+    player_name=models.CharField(max_length=20)
+    players_age=models.CharField(max_length=100)
+    native_place=models.CharField(max_length=30)
+    salary=models.IntegerField()
+    no_of_winnings=models.IntegerField()
+
+class playersAdmin(admin.ModelAdmin):
+    list_display=('player_name','players_age','native_place','salary','no_of_winnings')
 
 
-def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ezhilsree.settings')
-    try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
-        raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
-    execute_from_command_line(sys.argv)
 
+admin.py
 
-if __name__ == '__main__':
-    main()
+from django.contrib import admin
+from .models import players,playersAdmin
+admin.site.register(players,playersAdmin)
+
 ```
 
 ## OUTPUT
-![Alt text](image-1.png)
-![Alt text](image.png)
-Include the screenshot of your admin page.
+ ![Alt text](OUTPUT.jpg)
 
 
 ## RESULT
