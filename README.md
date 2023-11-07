@@ -49,7 +49,7 @@ admin.site.register(players,playersAdmin)
 ```
 
 ## OUTPUT
- ![Alt text](OUTPUT.jpg)
+![Alt text](OUTPUT.jpg)
 
 
 ## RESULT
